@@ -1,0 +1,19 @@
+So let's bring all these pieces together and make some pseudocode.
+First we want to open the memory card file. (done)
+Then, repeating until we've reached the end of the card file, (done)
+we'll read 512 bytes in.(done)
+
+Then we'll ask whether we're at the start of a new JPEG.
+If we are, then we'll ask whether we've already found a JPEG.
+If we haven't, then that means that we'll start our very first JPEG.
+But if we already have found a JPEG, then that
+means that we need to close the previous file and then open our new one.
+Now, say we've read 512 bytes in and we haven't
+reached the start of a new JPEG.
+Well, then we ask ourselves, well, have we already found a JPEG or not?
+Because if we haven't, then that means that we can simply
+discard those 512 bytes and then go to the start of our loop.
+But if we have already found a JPEG, then that
+means that those 512 bytes belong to the currently opened file.
+Finally, once we've reached the end of the memory card, we can exit the loop
+and close any remaining files.
